@@ -111,20 +111,6 @@
             This section will cover professional work, current priorities, and
             the areas where I spend most of my time and energy.
           </p>
-          <div>
-            <h2>Entrepreneurship</h2>
-            <p>
-              This subsection will highlight ventures, ideas, and projects that
-              reflect my approach to building and experimenting.
-            </p>
-          </div>
-          <div>
-            <h2>Climate Advocacy</h2>
-            <p>
-              This subsection will outline the advocacy, policy, and organizing
-              work that shapes my climate focus.
-            </p>
-          </div>
         </section>
         <section id="entrepreneurship" class="hidden">
           <h1>Entrepreneurship</h1>
@@ -218,6 +204,25 @@
     <script>
       const navItems = document.querySelectorAll("[data-section]");
       const sections = document.querySelectorAll('main section');
+      const startHereNavItem = document.querySelector(
+        '[data-section="start-here"]'
+      );
+
+      sections.forEach((section) => {
+        if (section.id === "start-here") {
+          section.classList.remove("hidden");
+        } else {
+          section.classList.add("hidden");
+        }
+      });
+
+      navItems.forEach((navItem) => {
+        navItem.classList.remove("active");
+      });
+
+      if (startHereNavItem) {
+        startHereNavItem.classList.add("active");
+      }
 
       navItems.forEach((item) => {
         item.addEventListener("click", (event) => {
