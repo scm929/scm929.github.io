@@ -33,7 +33,7 @@ body {
   height: calc(100vh - 3rem);
   overflow-y: auto;
   padding: 0.5rem;
-background: rgb(232, 210, 180,0.2);
+background: #cab49b40;
   backdrop-filter: blur(2px);
   border-radius: 0px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
@@ -111,8 +111,8 @@ main {
   flex: 1;
   height: calc(100vh - 3rem);
   overflow-y: auto;
-  padding: 1rem;
-background: rgba(232, 210, 180, 0.2);
+  padding: 01rem;
+background: #cab49b40;
   backdrop-filter: blur(2px);
   border-radius: 0px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
