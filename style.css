@@ -125,7 +125,7 @@ background: #cab49b40;
 .start-here-layout:not(.hidden) {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 0.5rem;
 }
 
 .start-nav ul {
@@ -148,17 +148,6 @@ background: #cab49b40;
   align-self: center;
 }
 
-.values-box {
-  max-width: 42rem;
-  padding: 1.25rem;
-  border: 1px solid currentColor;
-}
-
-.personal-section {
-  max-width: 42rem;
-  padding: 1.25rem;
-  border-top: 1px solid currentColor;
-}
 
 @media (max-width: 767px) {
   .layout {
