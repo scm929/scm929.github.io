@@ -62,18 +62,47 @@ body {
 .sidebar nav a {
   display: block;
   width: 100%;
-  padding: 0.25rem 0;
+  padding: 8px 12px;
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 .nav-header {
   margin-top: 1rem;
+  background: #c1583a;
+  color: #fff;
   font-weight: 700;
 }
 
 .nav-sub {
-  padding-left: 1rem;
+  padding-left: 20px;
+  background: #e8c9a0;
+  color: #1f1a17;
+}
+
+.nav-header:hover {
+  background: #a8472b;
+}
+
+.nav-sub:hover {
+  background: #d4a87a;
+}
+
+.nav-header.active {
+  border-left: 4px solid #fff;
+}
+
+.nav-sub.active {
+  border-left: 4px solid #c1583a;
+}
+
+.sidebar nav a:link,
+.sidebar nav a:visited,
+.sidebar nav a:hover,
+.sidebar nav a:active {
+  text-decoration: none;
 }
 
 main {

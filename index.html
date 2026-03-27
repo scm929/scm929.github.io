@@ -223,12 +223,18 @@
         item.addEventListener("click", (event) => {
           event.preventDefault();
 
+          navItems.forEach((navItem) => {
+            navItem.classList.remove("active");
+          });
+
           sections.forEach((section) => {
             section.classList.add("hidden");
           });
 
           const targetId = item.dataset.section.replace(/\s+/g, "-");
           const targetSection = document.getElementById(targetId);
+
+          item.classList.add("active");
 
           if (targetSection) {
             targetSection.classList.remove("hidden");
