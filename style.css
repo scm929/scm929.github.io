@@ -118,7 +118,7 @@ main {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-.start-here-layout {
+.start-here-layout:not(.hidden) {
   display: flex;
   flex-direction: column;
   gap: 2rem;
