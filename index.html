@@ -36,7 +36,7 @@
               >
             </li>
             <li>
-              <a href="#" class="nav-sub" data-section="climate advocacy"
+              <a href="#" class="nav-sub" data-section="climate-advocacy"
                 >climate advocacy</a
               >
             </li>
@@ -50,22 +50,22 @@
               <a href="#" class="nav-sub" data-section="resume">resume</a>
             </li>
             <li>
-              <a href="#" class="nav-header" data-section="other stuff"
+              <a href="#" class="nav-header" data-section="other-stuff"
                 >other stuff</a
               >
             </li>
             <li>
-              <a href="#" class="nav-sub" data-section="random writing"
+              <a href="#" class="nav-sub" data-section="random-writing"
                 >random writing</a
               >
             </li>
             <li>
-              <a href="#" class="nav-sub" data-section="reading list"
+              <a href="#" class="nav-sub" data-section="reading-list"
                 >reading list</a
               >
             </li>
             <li>
-              <a href="#" class="nav-sub" data-section="site info"
+              <a href="#" class="nav-sub" data-section="site-info"
                 >site info</a
               >
             </li>
@@ -229,7 +229,6 @@
 
           sections.forEach((section) => {
             section.classList.add("hidden");
-            section.style.display = "none";
           });
 
           const targetId = item.dataset.section;
@@ -239,7 +238,6 @@
 
           if (targetSection) {
             targetSection.classList.remove("hidden");
-            targetSection.style.display = "";
           }
         });
       });
