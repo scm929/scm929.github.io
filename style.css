@@ -111,3 +111,32 @@ main {
   padding: 1.25rem;
   border-top: 1px solid currentColor;
 }
+
+@media (max-width: 767px) {
+  .layout {
+    display: block;
+  }
+
+  .sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+    overflow-y: visible;
+  }
+
+  .sidebar header img {
+    max-width: 220px;
+  }
+
+  main {
+    margin-left: 0;
+    width: 100%;
+    height: auto;
+    overflow-y: visible;
+    padding: 1.5rem;
+  }
+
+  .sidebar nav a {
+    width: 100%;
+  }
+}
