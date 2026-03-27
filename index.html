@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sophia McConnell</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      .hidden {
+        display: none;
+      }
+    </style>
   </head>
   <body>
     <div class="layout">
@@ -147,5 +152,26 @@
         </section>
       </main>
     </div>
+    <script>
+      const navItems = document.querySelectorAll("[data-section]");
+      const sections = document.querySelectorAll("main section");
+
+      navItems.forEach((item) => {
+        item.addEventListener("click", (event) => {
+          event.preventDefault();
+
+          sections.forEach((section) => {
+            section.classList.add("hidden");
+          });
+
+          const targetId = item.dataset.section.replace(/\s+/g, "-");
+          const targetSection = document.getElementById(targetId);
+
+          if (targetSection) {
+            targetSection.classList.remove("hidden");
+          }
+        });
+      });
+    </script>
   </body>
 </html>
