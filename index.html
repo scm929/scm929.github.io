@@ -20,7 +20,7 @@
         <nav aria-label="Primary">
           <ul>
             <li>
-              <a href="#" class="nav-header" data-section="start here"
+              <a href="#" class="nav-header" data-section="start-here"
                 >start here</a
               >
             </li>
@@ -217,7 +217,7 @@
     </div>
     <script>
       const navItems = document.querySelectorAll("[data-section]");
-      const sections = document.querySelectorAll("main section");
+      const sections = document.querySelectorAll('main section');
 
       navItems.forEach((item) => {
         item.addEventListener("click", (event) => {
@@ -229,15 +229,17 @@
 
           sections.forEach((section) => {
             section.classList.add("hidden");
+            section.style.display = "none";
           });
 
-          const targetId = item.dataset.section.replace(/\s+/g, "-");
+          const targetId = item.dataset.section;
           const targetSection = document.getElementById(targetId);
 
           item.classList.add("active");
 
           if (targetSection) {
             targetSection.classList.remove("hidden");
+            targetSection.style.display = "";
           }
         });
       });
