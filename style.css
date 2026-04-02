@@ -87,7 +87,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  transition: background-color 0.4s ease;
+  transition: opacity 0.2s ease, background-color 0.4s ease;
 }
 
 /* ── Layout ────────────────────────────────────────────────────────────── */
@@ -109,6 +109,7 @@ body {
   backdrop-filter: blur(2px);
   border-radius: 0px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: background 0.4s ease;
 }
 
 .sidebar header {
@@ -148,12 +149,14 @@ body {
   background: var(--nav-header-bg);
   color: #fff;
   font-weight: 700;
+  transition: background-color 0.4s ease;
 }
 
 .nav-sub {
   padding-left: 20px;
   background: var(--nav-sub-bg);
   color: #1f1a17;
+  transition: background-color 0.4s ease;
 }
 
 .nav-header:hover {
@@ -188,11 +191,13 @@ main {
   backdrop-filter: blur(2px);
   border-radius: 0px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: background 0.4s ease;
 }
 
 .card {
   background: var(--card-bg);
   padding: 1rem;
+  transition: background-color 0.4s ease;
 }
 
 .start-here-layout:not(.hidden) {

@@ -29,26 +29,40 @@ const themes = ["theme-rhode-island", "theme-arizona", "theme-tokyo", "theme-dub
 
 const themeButtons = document.querySelectorAll("[data-theme]");
 
-function setTheme(themeName) {
-  // Remove any existing theme class from <body>
-  themes.forEach((t) => document.body.classList.remove(t));
+function setTheme(themeName, animate = true) {
+  const swap = () => {
+    // Remove any existing theme class from <body>
+    themes.forEach((t) => document.body.classList.remove(t));
 
-  // Add the new theme class
-  document.body.classList.add(themeName);
+    // Add the new theme class
+    document.body.classList.add(themeName);
 
-  // Mark the correct button as active
-  themeButtons.forEach((btn) => {
-    btn.classList.toggle("active", btn.dataset.theme === themeName);
-  });
+    // Mark the correct button as active
+    themeButtons.forEach((btn) => {
+      btn.classList.toggle("active", btn.dataset.theme === themeName);
+    });
 
-  // Remember the choice so it persists on page reload
-  localStorage.setItem("theme", themeName);
+    // Remember the choice so it persists on page reload
+    localStorage.setItem("theme", themeName);
+  };
+
+  if (!animate) {
+    swap();
+    return;
+  }
+
+  // Fade out → swap background image → fade back in
+  document.body.style.opacity = "0";
+  setTimeout(() => {
+    swap();
+    document.body.style.opacity = "1";
+  }, 200);
 }
 
 themeButtons.forEach((btn) => {
   btn.addEventListener("click", () => setTheme(btn.dataset.theme));
 });
 
-// On page load, restore the last chosen theme (defaults to rhode-island)
+// On page load, restore the last chosen theme without animating
 const savedTheme = localStorage.getItem("theme") || "theme-rhode-island";
-setTheme(savedTheme);
+setTheme(savedTheme, false);
