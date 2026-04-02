@@ -75,6 +75,7 @@ html,
 body {
   height: 100%;
   margin: 0;
+  overflow: hidden; /* page itself never scrolls — panels handle their own scroll */
 }
 
 /* ── Body / background ─────────────────────────────────────────────────── */
@@ -93,19 +94,16 @@ body {
 .layout {
   display: flex;
   max-width: 1000px;
-  min-height: calc(100vh - 3rem);
-  margin: 1.5rem auto;
+  height: 100vh;        /* exactly fills the viewport — no more, no less */
+  margin: 0 auto;
+  padding: 1.5rem 1rem; /* breathing room around the panels */
   gap: 1rem;
 }
 
 /* ── Sidebar ───────────────────────────────────────────────────────────── */
 .sidebar {
-  position: sticky;
-  top: 1.5rem;
-  align-self: flex-start;
   width: 280px;
-  height: calc(100vh - 3rem);
-  overflow-y: auto;
+  overflow-y: auto;   /* sidebar can scroll internally if nav items overflow */
   padding: 0.5rem;
   background: var(--panel-bg);
   backdrop-filter: blur(2px);
@@ -184,8 +182,7 @@ body {
 /* ── Main content panel ────────────────────────────────────────────────── */
 main {
   flex: 1;
-  height: calc(100vh - 3rem);
-  overflow-y: auto;
+  overflow-y: auto;   /* scrolls only when content is taller than the panel */
   padding: 1rem;
   background: var(--panel-bg);
   backdrop-filter: blur(2px);
@@ -261,13 +258,18 @@ main {
 
 /* ── Responsive ────────────────────────────────────────────────────────── */
 @media (max-width: 767px) {
+  html,
+  body {
+    overflow: auto; /* restore normal page scroll on mobile */
+  }
+
   .layout {
-    display: flex;
     flex-direction: column;
+    height: auto;
+    padding: 1rem 0.5rem;
   }
 
   .sidebar {
-    position: static;
     width: 100%;
     height: auto;
     overflow-y: visible;
