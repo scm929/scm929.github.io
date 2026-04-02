@@ -1,3 +1,4 @@
+// ── Section navigation ────────────────────────────────────────────────────
 const navItems = document.querySelectorAll("[data-section]");
 const sections = document.querySelectorAll("main section");
 
@@ -20,3 +21,34 @@ navItems.forEach((item) => {
     setActiveSection(item.dataset.section);
   });
 });
+
+// ── Location theme switcher ───────────────────────────────────────────────
+// All possible theme class names — used to remove the old one before adding
+// the new one when switching locations.
+const themes = ["theme-rhode-island", "theme-arizona", "theme-tokyo", "theme-dublin"];
+
+const themeButtons = document.querySelectorAll("[data-theme]");
+
+function setTheme(themeName) {
+  // Remove any existing theme class from <body>
+  themes.forEach((t) => document.body.classList.remove(t));
+
+  // Add the new theme class
+  document.body.classList.add(themeName);
+
+  // Mark the correct button as active
+  themeButtons.forEach((btn) => {
+    btn.classList.toggle("active", btn.dataset.theme === themeName);
+  });
+
+  // Remember the choice so it persists on page reload
+  localStorage.setItem("theme", themeName);
+}
+
+themeButtons.forEach((btn) => {
+  btn.addEventListener("click", () => setTheme(btn.dataset.theme));
+});
+
+// On page load, restore the last chosen theme (defaults to rhode-island)
+const savedTheme = localStorage.getItem("theme") || "theme-rhode-island";
+setTheme(savedTheme);

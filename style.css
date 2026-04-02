@@ -1,7 +1,72 @@
+/* ── Theme variables ───────────────────────────────────────────────────────
+   Each theme defines these four properties. The defaults below are the
+   fallback when no theme is active (plain green, no photo).
+   ───────────────────────────────────────────────────────────────────────── */
 :root {
-  --panel-bg: #cab49b40;
+  --bg-color:       #7a9e7e;
+  --bg-image:       none;
+  --panel-bg:       #cab49b40;
+  --card-bg:        #cab49b;
+  --nav-header-bg:  #c1583a;
+  --nav-header-hover: #a8472b;
+  --nav-sub-bg:     #e8c9a0;
+  --nav-sub-hover:  #d4a87a;
+  --nav-sub-active: #c1583a;
 }
 
+/* Rhode Island — coastal greens/blues */
+body.theme-rhode-island {
+  --bg-color:         #3a6b6e;
+  --bg-image:         url("assets/images/bg-rhode-island.jpeg");
+  --panel-bg:         #2b4f5240;
+  --card-bg:          #7aabb0;
+  --nav-header-bg:    #2b6b72;
+  --nav-header-hover: #1d4f55;
+  --nav-sub-bg:       #a8d4d8;
+  --nav-sub-hover:    #84bcc2;
+  --nav-sub-active:   #2b6b72;
+}
+
+/* Arizona — warm desert */
+body.theme-arizona {
+  --bg-color:         #b5651d;
+  --bg-image:         url("assets/images/bg-arizona.jpeg");
+  --panel-bg:         #6b2d0040;
+  --card-bg:          #d4956a;
+  --nav-header-bg:    #a0430f;
+  --nav-header-hover: #7a320a;
+  --nav-sub-bg:       #e8c4a0;
+  --nav-sub-hover:    #d4a87a;
+  --nav-sub-active:   #a0430f;
+}
+
+/* Tokyo — soft cherry blossom */
+body.theme-tokyo {
+  --bg-color:         #6b5b6e;
+  --bg-image:         url("assets/images/bg-tokyo.jpeg");
+  --panel-bg:         #3d2b4040;
+  --card-bg:          #c8a8c0;
+  --nav-header-bg:    #8b5a7a;
+  --nav-header-hover: #6b3f5a;
+  --nav-sub-bg:       #e8cce0;
+  --nav-sub-hover:    #d4a8c4;
+  --nav-sub-active:   #8b5a7a;
+}
+
+/* Dublin — deep greens */
+body.theme-dublin {
+  --bg-color:         #2d5a27;
+  --bg-image:         url("assets/images/bg-dublin.jpeg");
+  --panel-bg:         #1a3d1640;
+  --card-bg:          #6a9e62;
+  --nav-header-bg:    #2d6b24;
+  --nav-header-hover: #1f4f19;
+  --nav-sub-bg:       #b0d4a8;
+  --nav-sub-hover:    #8cbc82;
+  --nav-sub-active:   #2d6b24;
+}
+
+/* ── Reset ─────────────────────────────────────────────────────────────── */
 * {
   box-sizing: border-box;
 }
@@ -12,15 +77,19 @@ body {
   margin: 0;
 }
 
+/* ── Body / background ─────────────────────────────────────────────────── */
 body {
   font-family: sans-serif;
-  background-color: #7a9e7e;
+  background-color: var(--bg-color);
+  background-image: var(--bg-image);
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  transition: background-color 0.4s ease;
 }
 
+/* ── Layout ────────────────────────────────────────────────────────────── */
 .layout {
   display: flex;
   max-width: 1000px;
@@ -29,6 +98,7 @@ body {
   gap: 1rem;
 }
 
+/* ── Sidebar ───────────────────────────────────────────────────────────── */
 .sidebar {
   position: sticky;
   top: 1.5rem;
@@ -77,23 +147,23 @@ body {
 
 .nav-header {
   margin-top: 1rem;
-  background: #c1583a;
+  background: var(--nav-header-bg);
   color: #fff;
   font-weight: 700;
 }
 
 .nav-sub {
   padding-left: 20px;
-  background: #e8c9a0;
+  background: var(--nav-sub-bg);
   color: #1f1a17;
 }
 
 .nav-header:hover {
-  background: #a8472b;
+  background: var(--nav-header-hover);
 }
 
 .nav-sub:hover {
-  background: #d4a87a;
+  background: var(--nav-sub-hover);
 }
 
 .nav-header.active {
@@ -101,7 +171,7 @@ body {
 }
 
 .nav-sub.active {
-  border-left: 4px solid #c1583a;
+  border-left: 4px solid var(--nav-sub-active);
 }
 
 .sidebar nav a:link,
@@ -111,6 +181,7 @@ body {
   text-decoration: none;
 }
 
+/* ── Main content panel ────────────────────────────────────────────────── */
 main {
   flex: 1;
   height: calc(100vh - 3rem);
@@ -122,10 +193,11 @@ main {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-.card{
-  background: #cab49b;
+.card {
+  background: var(--card-bg);
   padding: 1rem;
 }
+
 .start-here-layout:not(.hidden) {
   display: flex;
   flex-direction: column;
@@ -152,7 +224,42 @@ main {
   align-self: center;
 }
 
+/* ── Location switcher ─────────────────────────────────────────────────── */
+.location-switcher {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  z-index: 100;
+}
 
+.location-switcher button {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  text-align: left;
+  transition: opacity 0.2s ease;
+  opacity: 0.75;
+}
+
+.location-switcher button:hover {
+  opacity: 1;
+}
+
+.location-switcher button.active {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* ── Responsive ────────────────────────────────────────────────────────── */
 @media (max-width: 767px) {
   .layout {
     display: flex;
@@ -179,5 +286,10 @@ main {
 
   .sidebar nav a {
     width: 100%;
+  }
+
+  .location-switcher {
+    bottom: 0.5rem;
+    left: 0.5rem;
   }
 }
