@@ -30,7 +30,7 @@ Everything else (entrepreneurship, climate advocacy, standalone resume, standalo
 ## Planned
 
 - [x] Change font to Piazzolla (expressive literary serif, old-web personal feel)
-- [ ] Update link styling
+- [x] Update link styling
 - [ ] Write first blog post: Mandarin characters for the seasons
 - [ ] Interactive animations (nature-themed — specifics TBD)
 - [ ] Easter eggs (specifics TBD)
