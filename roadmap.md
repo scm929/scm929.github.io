@@ -29,8 +29,8 @@ Everything else (entrepreneurship, climate advocacy, standalone resume, standalo
 
 ## Planned
 
-- [ ] Change font to something nature-y but readable
-- [ ] Change font to something nature-y but readable
+- [x] Change font to Piazzolla (expressive literary serif, old-web personal feel)
+- [ ] Update link styling
 - [ ] Write first blog post: Mandarin characters for the seasons
 - [ ] Interactive animations (nature-themed — specifics TBD)
 - [ ] Easter eggs (specifics TBD)

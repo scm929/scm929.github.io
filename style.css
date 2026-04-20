@@ -80,7 +80,7 @@ body {
 
 /* ── Body / background ─────────────────────────────────────────────────── */
 body {
-  font-family: sans-serif;
+  font-family: 'Piazzolla', serif;
   background-color: var(--bg-color);
   background-image: var(--bg-image);
   background-attachment: fixed;
