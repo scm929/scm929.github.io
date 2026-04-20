@@ -23,22 +23,20 @@ Everything else (entrepreneurship, climate advocacy, standalone resume, standalo
 - [x] Reading list with books by year
 - [x] Mobile responsive layout
 - [x] Custom domain (`sophiamcconnell.com`)
-
-## In Progress
-
 - [x] Simplify nav to the four active sections
 - [x] Move resume and contact info into "start here"
-- [ ] Write first real essay for "random writing"
+- [x] Emoji favicon (theme-specific: 🌊 RI, 🌵 AZ, 🌳 Tokyo, ☘️ Dublin)
 
 ## Planned
 
-- [ ] Update favicon to an emoji (TBD which one)
+- [ ] Change font to something nature-y but readable
 - [ ] Change font to something nature-y but readable
 - [ ] Write first blog post: Mandarin characters for the seasons
 - [ ] Interactive animations (nature-themed — specifics TBD)
 - [ ] Easter eggs (specifics TBD)
 - [ ] Continue building out "random writing" over time
 - [ ] Refine "start here" to feel like a real introduction
+- [ ] Write first real essay for "random writing"
 
 ## Parking Lot
 

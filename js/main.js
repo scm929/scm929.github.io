@@ -27,6 +27,13 @@ navItems.forEach((item) => {
 // the new one when switching locations.
 const themes = ["theme-rhode-island", "theme-arizona", "theme-tokyo", "theme-dublin"];
 
+const themeEmojis = {
+  "theme-rhode-island": "🌊",
+  "theme-arizona": "🌵",
+  "theme-tokyo": "🌳",
+  "theme-dublin": "☘️",
+};
+
 const themeButtons = document.querySelectorAll("[data-theme]");
 
 function setTheme(themeName, animate = true) {
@@ -44,6 +51,10 @@ function setTheme(themeName, animate = true) {
 
     // Remember the choice so it persists on page reload
     localStorage.setItem("theme", themeName);
+
+    // Swap favicon to match theme
+    const emoji = themeEmojis[themeName];
+    document.getElementById("favicon").href = `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>${emoji}</text></svg>`;
   };
 
   if (!animate) {
