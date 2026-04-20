@@ -131,55 +131,41 @@ body {
 }
 
 .sidebar nav li + li {
-  margin-top: 0.4rem;
+  margin-top: 0;
 }
 
 .sidebar nav a {
   display: block;
   width: 100%;
-  padding: 8px 12px;
+  padding: 5px 12px;
   text-decoration: none;
   color: inherit;
   cursor: pointer;
+  font-weight: 600;
   transition: background-color 0.2s ease;
 }
 
-.nav-header {
-  margin-top: 1rem;
-  background: var(--nav-header-bg);
+.sidebar nav a {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.22),
+    rgba(0, 0, 0, 0.18)
+  ), var(--nav-header-bg);
   color: #fff;
-  font-weight: 700;
   transition: background-color 0.4s ease;
 }
 
-.nav-sub {
-  padding-left: 20px;
-  background: var(--nav-sub-bg);
-  color: #1f1a17;
-  transition: background-color 0.4s ease;
+.sidebar nav a:hover {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.12),
+    rgba(0, 0, 0, 0.25)
+  ), var(--nav-header-hover);
 }
 
-a.nav-header:hover {
-  background: var(--nav-header-hover);
-}
-
-span.nav-header {
-  cursor: default;
-  display: block;
-  width: 100%;
-  padding: 8px 12px;
-}
-
-.nav-sub:hover {
-  background: var(--nav-sub-hover);
-}
-
-.nav-header.active {
-  border-left: 4px solid #fff;
-}
-
+.nav-header.active,
 .nav-sub.active {
-  border-left: 4px solid var(--nav-sub-active);
+  border-left: 4px solid rgba(0, 0, 0, 0.25);
 }
 
 .sidebar nav a:link,
