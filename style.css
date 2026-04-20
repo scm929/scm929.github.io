@@ -236,6 +236,82 @@ main {
   align-self: center;
 }
 
+/* ── Post index (random writing section) ──────────────────────────────── */
+.post-index-layout:not(.hidden) {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.post-card {
+  display: block;
+  text-decoration: none;
+  transition: filter 0.2s ease;
+}
+
+.post-card:hover {
+  filter: brightness(1.06);
+}
+
+.post-meta {
+  display: block;
+  font-size: 0.8rem;
+  opacity: 0.65;
+  margin-bottom: 0.2rem;
+}
+
+.post-title {
+  margin: 0 0 0.3rem;
+  font-size: 1.15rem;
+}
+
+.post-desc {
+  margin: 0;
+  font-size: 0.95rem;
+  font-style: italic;
+  opacity: 0.85;
+}
+
+/* ── Post page (individual post layout) ───────────────────────────────── */
+.post-page {
+  max-width: 640px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--card-bg);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: background-color 0.4s ease;
+}
+
+.post-back {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+  opacity: 0.75;
+  transition: opacity 0.2s ease;
+}
+
+.post-back:hover {
+  opacity: 1;
+}
+
+.post-page article h1 {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.post-page article time {
+  font-size: 0.85rem;
+  opacity: 0.65;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.post-page article p {
+  line-height: 1.7;
+}
+
 /* ── Location switcher ─────────────────────────────────────────────────── */
 .location-switcher {
   position: fixed;
