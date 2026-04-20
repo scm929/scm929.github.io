@@ -27,7 +27,14 @@ Object.values(themeImages).forEach(src => {
   img.src = src;
 });
 
-const savedTheme = localStorage.getItem("theme") || "theme-rhode-island";
+const themeAliases = {
+  "theme-tokyo": "theme-japan",
+  "theme-dublin": "theme-ireland",
+};
+
+const raw = localStorage.getItem("theme");
+const savedTheme = themeAliases[raw] || raw || "theme-rhode-island";
+if (themeAliases[raw]) localStorage.setItem("theme", savedTheme);
 document.body.classList.add(savedTheme);
 
 let transitioning = false;
