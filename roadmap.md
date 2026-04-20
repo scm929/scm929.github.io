@@ -34,6 +34,7 @@ Everything else (entrepreneurship, climate advocacy, standalone resume, standalo
 
 - [ ] Update colors for all themes
 - [x] Clean up theme switching transitions (eliminate visible loading/flash between themes)
+- [x] Bring theme switching (including crossfade transition) to individual random writing post pages
 - [ ] Interactive animations (nature-themed — specifics TBD)
 - [ ] Easter eggs (specifics TBD)
 - [ ] Continue building out "random writing" over time
