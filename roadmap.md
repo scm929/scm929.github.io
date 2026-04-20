@@ -32,6 +32,9 @@ Everything else (entrepreneurship, climate advocacy, standalone resume, standalo
 
 ## Planned
 
+- [ ] Update favicon to an emoji (TBD which one)
+- [ ] Change font to something nature-y but readable
+- [ ] Write first blog post: Mandarin characters for the seasons
 - [ ] Interactive animations (nature-themed — specifics TBD)
 - [ ] Easter eggs (specifics TBD)
 - [ ] Continue building out "random writing" over time
