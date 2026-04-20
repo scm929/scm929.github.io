@@ -32,6 +32,8 @@ Everything else (entrepreneurship, climate advocacy, standalone resume, standalo
 
 ## Planned
 
+- [ ] Update colors for all themes
+- [x] Clean up theme switching transitions (eliminate visible loading/flash between themes)
 - [ ] Interactive animations (nature-themed — specifics TBD)
 - [ ] Easter eggs (specifics TBD)
 - [ ] Continue building out "random writing" over time
