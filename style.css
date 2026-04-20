@@ -150,8 +150,8 @@ body {
     to bottom,
     rgba(255, 255, 255, 0.22),
     rgba(0, 0, 0, 0.18)
-  ), var(--nav-header-bg);
-  color: #fff;
+  ), var(--nav-sub-bg);
+  color: #1f1a17;
   transition: background-color 0.4s ease;
 }
 
@@ -160,7 +160,7 @@ body {
     to bottom,
     rgba(255, 255, 255, 0.12),
     rgba(0, 0, 0, 0.25)
-  ), var(--nav-header-hover);
+  ), var(--nav-sub-hover);
 }
 
 .nav-header.active,
