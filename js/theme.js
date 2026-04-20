@@ -7,13 +7,14 @@ const themeEmojis = {
   "theme-dublin": "☘️",
 };
 
-const themeButtons = document.querySelectorAll("[data-theme]");
+const savedTheme = localStorage.getItem("theme") || "theme-rhode-island";
+document.body.classList.add(savedTheme);
 
 function setTheme(themeName, animate = true) {
   const swap = () => {
     themes.forEach((t) => document.body.classList.remove(t));
     document.body.classList.add(themeName);
-    themeButtons.forEach((btn) => {
+    document.querySelectorAll("[data-theme]").forEach((btn) => {
       btn.classList.toggle("active", btn.dataset.theme === themeName);
     });
     localStorage.setItem("theme", themeName);
@@ -33,9 +34,10 @@ function setTheme(themeName, animate = true) {
   }, 200);
 }
 
-themeButtons.forEach((btn) => {
-  btn.addEventListener("click", () => setTheme(btn.dataset.theme));
-});
+document.addEventListener("DOMContentLoaded", () => {
+  setTheme(savedTheme, false);
 
-const savedTheme = localStorage.getItem("theme") || "theme-rhode-island";
-setTheme(savedTheme, false);
+  document.querySelectorAll("[data-theme]").forEach((btn) => {
+    btn.addEventListener("click", () => setTheme(btn.dataset.theme));
+  });
+});

@@ -26,12 +26,12 @@ Everything else (entrepreneurship, climate advocacy, standalone resume, standalo
 - [x] Simplify nav to the four active sections
 - [x] Move resume and contact info into "start here"
 - [x] Emoji favicon (theme-specific: 🌊 RI, 🌵 AZ, 🌳 Tokyo, ☘️ Dublin)
-
-## Planned
-
 - [x] Change font to Piazzolla (expressive literary serif, old-web personal feel)
 - [x] Update link styling
 - [x] Write first blog post: Mandarin characters for the seasons
+
+## Planned
+
 - [ ] Interactive animations (nature-themed — specifics TBD)
 - [ ] Easter eggs (specifics TBD)
 - [ ] Continue building out "random writing" over time
