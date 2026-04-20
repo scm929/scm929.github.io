@@ -22,7 +22,7 @@ Keep it simple. No frameworks, no build tools, no package manager. The site shou
 
 **Single-page layout with section switching**: All sections live in the DOM; JavaScript toggles visibility. Avoids routing complexity.
 
-**CSS custom properties for theming**: Four location-based themes (Rhode Island, Arizona, Tokyo, Dublin) are implemented as CSS variable sets swapped on `<body>`. Preference persists via `localStorage`. On page load, `theme.js` runs at the top of `<body>` and immediately adds the saved theme class to prevent a flash of the default theme; button wiring and active states are set up in a `DOMContentLoaded` listener.
+**CSS custom properties for theming**: Four location-based themes (Rhode Island, Arizona, Japan, Ireland) are implemented as CSS variable sets swapped on `<body>`. Preference persists via `localStorage`. On page load, `theme.js` runs at the top of `<body>` and immediately adds the saved theme class to prevent a flash of the default theme; button wiring and active states are set up in a `DOMContentLoaded` listener.
 
 **No build tooling**: The site can be previewed by opening `index.html` directly or running `python3 -m http.server`.
 

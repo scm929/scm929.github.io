@@ -34,10 +34,10 @@ body.theme-arizona {
   --nav-sub-active:   #a0430f;
 }
 
-/* Tokyo — soft cherry blossom */
-body.theme-tokyo {
+/* Japan — soft cherry blossom */
+body.theme-japan {
   --bg-color:         #6b5b6e;
-  --bg-image:         url("assets/images/bg-tokyo.jpeg");
+  --bg-image:         url("assets/images/bg-japan.jpeg");
   --panel-bg:         #3d2b4040;
   --card-bg:          #c8a8c0;
   --nav-sub-bg:       #e8cce0;
@@ -45,10 +45,10 @@ body.theme-tokyo {
   --nav-sub-active:   #8b5a7a;
 }
 
-/* Dublin — deep greens */
-body.theme-dublin {
+/* Ireland — deep greens */
+body.theme-ireland {
   --bg-color:         #2d5a27;
-  --bg-image:         url("assets/images/bg-dublin.jpeg");
+  --bg-image:         url("assets/images/bg-ireland.jpeg");
   --panel-bg:         #1a3d1640;
   --card-bg:          #6a9e62;
   --nav-sub-bg:       #b0d4a8;

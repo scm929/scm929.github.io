@@ -1,24 +1,24 @@
-const themes = ["theme-rhode-island", "theme-arizona", "theme-tokyo", "theme-dublin"];
+const themes = ["theme-rhode-island", "theme-arizona", "theme-japan", "theme-ireland"];
 
 const themeEmojis = {
   "theme-rhode-island": "🌊",
   "theme-arizona": "🌵",
-  "theme-tokyo": "🌳",
-  "theme-dublin": "☘️",
+  "theme-japan": "🌳",
+  "theme-ireland": "☘️",
 };
 
 const themeImages = {
   "theme-rhode-island": "assets/images/bg-rhode-island.jpeg",
   "theme-arizona": "assets/images/bg-arizona.jpeg",
-  "theme-tokyo": "assets/images/bg-tokyo.jpeg",
-  "theme-dublin": "assets/images/bg-dublin.jpeg",
+  "theme-japan": "assets/images/bg-japan.jpeg",
+  "theme-ireland": "assets/images/bg-ireland.jpeg",
 };
 
 const themeColors = {
   "theme-rhode-island": "#3a6b6e",
   "theme-arizona": "#b5651d",
-  "theme-tokyo": "#6b5b6e",
-  "theme-dublin": "#2d5a27",
+  "theme-japan": "#6b5b6e",
+  "theme-ireland": "#2d5a27",
 };
 
 // Preload all theme images so switching is instant

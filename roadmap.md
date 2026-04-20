@@ -25,7 +25,7 @@ Everything else (entrepreneurship, climate advocacy, standalone resume, standalo
 - [x] Custom domain (`sophiamcconnell.com`)
 - [x] Simplify nav to the four active sections
 - [x] Move resume and contact info into "start here"
-- [x] Emoji favicon (theme-specific: 🌊 RI, 🌵 AZ, 🌳 Tokyo, ☘️ Dublin)
+- [x] Emoji favicon (theme-specific: 🌊 RI, 🌵 AZ, 🌳 Japan, ☘️ Ireland)
 - [x] Change font to Piazzolla (expressive literary serif, old-web personal feel)
 - [x] Update link styling
 - [x] Write first blog post: Mandarin characters for the seasons
