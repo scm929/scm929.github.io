@@ -71,6 +71,14 @@ function setTheme(themeName, animate = true) {
   }, 300);
 }
 
+// ── Snake easter egg (Arizona only) ──────────────────────────────────────
+function triggerSnake() {
+  const el = document.getElementById("snake");
+  el.classList.remove("slithering");
+  void el.offsetWidth; // force reflow to restart animation
+  el.classList.add("slithering");
+}
+
 // ── Dolphin easter egg (Rhode Island only) ────────────────────────────────
 let dolphinAppearTimer = null;
 let dolphinHideTimer = null;
@@ -92,6 +100,7 @@ function scheduleDolphin() {
 document.addEventListener("DOMContentLoaded", () => {
   setTheme(savedTheme, false);
   if (savedTheme === "theme-rhode-island") scheduleDolphin();
+  if (savedTheme === "theme-arizona") triggerSnake();
 
   document.querySelectorAll("[data-theme]").forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -99,6 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
       clearDolphinTimers();
       document.getElementById("dolphin").classList.remove("visible");
       if (btn.dataset.theme === "theme-rhode-island") scheduleDolphin();
+      if (btn.dataset.theme === "theme-arizona") triggerSnake();
     });
   });
 });
