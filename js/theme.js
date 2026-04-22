@@ -71,10 +71,34 @@ function setTheme(themeName, animate = true) {
   }, 300);
 }
 
+// ── Dolphin easter egg (Rhode Island only) ────────────────────────────────
+let dolphinAppearTimer = null;
+let dolphinHideTimer = null;
+
+function clearDolphinTimers() {
+  clearTimeout(dolphinAppearTimer);
+  clearTimeout(dolphinHideTimer);
+}
+
+function scheduleDolphin() {
+  clearDolphinTimers();
+  dolphinAppearTimer = setTimeout(() => {
+    const el = document.getElementById("dolphin");
+    el.classList.add("visible");
+    dolphinHideTimer = setTimeout(() => el.classList.remove("visible"), 3000);
+  }, 10000);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   setTheme(savedTheme, false);
+  if (savedTheme === "theme-rhode-island") scheduleDolphin();
 
   document.querySelectorAll("[data-theme]").forEach((btn) => {
-    btn.addEventListener("click", () => setTheme(btn.dataset.theme));
+    btn.addEventListener("click", () => {
+      setTheme(btn.dataset.theme);
+      clearDolphinTimers();
+      document.getElementById("dolphin").classList.remove("visible");
+      if (btn.dataset.theme === "theme-rhode-island") scheduleDolphin();
+    });
   });
 });
