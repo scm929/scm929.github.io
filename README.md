@@ -1,154 +1,73 @@
 # Sophia McConnell Website
 
-This repository contains the source for Sophia McConnell's personal website. It is a simple static site built with HTML and CSS, with a small amount of vanilla JavaScript used to switch between sections in the main content area.
-
-The site is configured for GitHub Pages and uses the custom domain `sophiamcconnell.com`.
-
-## Project Overview
-
-The current site layout has two main panels:
-
-- A left sidebar with a headshot and navigation
-- A main content area that shows one section at a time
-
-The navigation works like a single-page site. Clicking an item in the sidebar hides the other `<section>` elements in `<main>` and shows the selected one.
+This repository contains the source for [sophiamcconnell.com](https://sophiamcconnell.com) — a personal site for writing, reading lists, and general presence on the web. It is a zero-dependency static site built with plain HTML, CSS, and vanilla JavaScript, hosted on GitHub Pages.
 
 ## File Structure
 
-- `index.html` - Main page markup, sidebar navigation, content sections, and inline JavaScript for section switching
-- `style.css` - All visual styling, layout, colors, spacing, and responsive behavior
-- `assets/images/headshot_photo.jpeg` - Sidebar headshot image
-- `js/main.js` - Present in the repo but currently empty and not in use
-- `CNAME` - Custom domain configuration for GitHub Pages
+```
+/
+├── index.html              # Main page markup and section structure
+├── style.css               # All styles, including theme variables
+├── js/
+│   ├── theme.js            # Theme switching, FOUC prevention, localStorage persistence
+│   └── main.js             # Section navigation and active state
+├── posts/
+│   └── mandarin-seasons.html  # Individual blog post page
+├── assets/
+│   └── images/             # Headshot and theme background images
+└── CNAME                   # Custom domain config for GitHub Pages
+```
 
 ## How It Works
 
 ### Layout
 
-The page uses a `.layout` wrapper with two children:
+The page uses a two-panel layout:
 
-- `.sidebar`
-- `main`
+- `.sidebar` — headshot and navigation links
+- `main` — content area that shows one section at a time
 
-On desktop, these sit side by side. On smaller screens, the media query in `style.css` stacks them vertically.
+On desktop these sit side by side. On smaller screens the media query in `style.css` stacks them vertically.
 
-### Navigation
+### Section Navigation
 
-Each sidebar link has a `data-section` attribute that matches the `id` of a `<section>` inside `main`.
+Each sidebar link has a `data-section` attribute matching the `id` of a `<section>` inside `main`. `js/main.js` handles showing/hiding sections and setting the active nav state. It also reads `window.location.hash` on load, so linking directly to a section (e.g. `index.html#random-writing`) works.
 
-Example:
+Current sections: `start-here`, `random-writing`, `reading-list`, `site-info`.
 
-```html
-<a href="#" class="nav-header" data-section="work">work</a>
-```
+### Theming
 
-This connects to:
+Four location-based color themes are defined as CSS custom property sets in `style.css`:
 
-```html
-<section id="work" class="hidden">
-```
+| Theme | Class | Emoji |
+|-------|-------|-------|
+| Rhode Island | `theme-rhode-island` | 🌊 |
+| Arizona | `theme-arizona` | 🌵 |
+| Japan | `theme-japan` | 🌳 |
+| Ireland | `theme-ireland` | ☘️ |
 
-The inline script at the bottom of `index.html`:
+`js/theme.js` runs at the top of `<body>` (before the DOM is parsed) to immediately apply the saved theme from `localStorage`, preventing a flash of the default theme. It also handles:
 
-- Finds all nav items
-- Finds all sections in `main`
-- Shows `start-here` by default
-- Hides the rest with the `.hidden` class
-- Adds and removes the `.active` class on nav items as the user clicks
+- Theme button wiring and active states
+- Crossfade transition via `#theme-overlay`
+- Favicon updates to match the active theme emoji
 
-### Styling
+### Blog Posts
 
-Most of the design is controlled in `style.css`, including:
+Individual posts live in `posts/` as standalone HTML files. Each post includes `js/theme.js` and the location switcher so theme persistence works across pages. The back link returns to `index.html#random-writing`.
 
-- Panel sizing and layout
-- Sidebar and main panel backgrounds
-- Navbar button colors and spacing
-- Card backgrounds for the start page
-- Mobile behavior under `@media (max-width: 767px)`
+### Easter Eggs
 
-## Current Content Sections
+- **Dolphin 🐬** (Rhode Island only) — appears in the top-left corner 10 seconds after the theme is active
+- **Snake 🐍** (Arizona only) — slithers across the bottom of the screen on theme load or switch
 
-The main page currently includes these sections:
+### Font
 
-- `start-here`
-- `work`
-- `entrepreneurship`
-- `climate-advocacy`
-- `me`
-- `connect`
-- `resume`
-- `other-stuff`
-- `random-writing`
-- `reading-list`
-- `site-info`
-
-Most sections are still placeholder content, which makes this repo a good starting point for iterating on structure and design before filling in final copy.
-
-## Common Edits
-
-### Change sidebar or main panel appearance
-
-Edit the `.sidebar` and `main` rules in `style.css`.
-
-### Change the rounded corners
-
-Adjust `border-radius` in:
-
-- `.sidebar`
-- `main`
-- `.sidebar nav a` if you want rounded nav buttons
-- `.card` if you want rounded content cards
-
-### Change spacing between the cards on the Start Here page
-
-Edit the `gap` value in:
-
-```css
-.start-here-layout:not(.hidden) {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-```
-
-### Change card styling
-
-Edit the `.card` rule in `style.css`.
-
-Example properties you may want to change:
-
-- `background`
-- `padding`
-- `border-radius`
-- `box-shadow`
-- `border`
-
-### Add a new section
-
-1. Add a new nav link in the sidebar with a unique `data-section` value.
-2. Add a new `<section>` in `main` with a matching `id`.
-3. Give the section `class="hidden"` if it should be hidden until clicked.
-
-Example:
-
-```html
-<a href="#" class="nav-sub" data-section="new-section">new section</a>
-```
-
-```html
-<section id="new-section" class="hidden">
-  <h1>New Section</h1>
-  <p>Content goes here.</p>
-</section>
-```
-
-No JavaScript changes are needed as long as the `data-section` and `id` match.
+The site uses [Piazzolla](https://fonts.google.com/specimen/Piazzolla), loaded from Google Fonts — a variable serif with a literary, expressive character.
 
 ## Local Development
 
-Because this is a static site, you can preview it by opening `index.html` in a browser.
-
-If you want a local server instead, you can use something simple like:
+Open `index.html` directly in a browser, or run a local server:
 
 ```bash
 python3 -m http.server
@@ -158,14 +77,4 @@ Then open `http://localhost:8000`.
 
 ## Deployment
 
-This repository is set up for GitHub Pages. The `CNAME` file points the site at:
-
-- `sophiamcconnell.com`
-
-If GitHub Pages is enabled for this repository, pushing changes to the published branch should update the live site.
-
-## Notes
-
-- The JavaScript currently lives inline in `index.html` rather than in `js/main.js`.
-- `js/main.js` is available if you want to move the script into a separate file later.
-- The site is intentionally lightweight and easy to edit without a build step or framework.
+Pushing to `main` automatically deploys to GitHub Pages at `sophiamcconnell.com`.

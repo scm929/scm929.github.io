@@ -74,6 +74,7 @@ function setTheme(themeName, animate = true) {
 // ── Snake easter egg (Arizona only) ──────────────────────────────────────
 function triggerSnake() {
   const el = document.getElementById("snake");
+  if (!el) return;
   el.classList.remove("slithering");
   void el.offsetWidth; // force reflow to restart animation
   el.classList.add("slithering");
@@ -106,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", () => {
       setTheme(btn.dataset.theme);
       clearDolphinTimers();
-      document.getElementById("dolphin").classList.remove("visible");
+      document.getElementById("dolphin")?.classList.remove("visible");
       if (btn.dataset.theme === "theme-rhode-island") scheduleDolphin();
       if (btn.dataset.theme === "theme-arizona") triggerSnake();
     });

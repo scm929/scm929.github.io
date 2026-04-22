@@ -49,4 +49,3 @@ Keep it simple. No frameworks, no build tools, no package manager. The site shou
 ## Areas of Interest for Future Exploration
 
 - Interactive animations (nature-themed, indie-web aesthetic)
-- Easter eggs and hidden interactions

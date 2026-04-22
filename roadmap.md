@@ -36,7 +36,7 @@ Everything else (entrepreneurship, climate advocacy, standalone resume, standalo
 - [x] Clean up theme switching transitions (eliminate visible loading/flash between themes)
 - [x] Bring theme switching (including crossfade transition) to individual random writing post pages
 - [ ] Interactive animations (nature-themed — specifics TBD)
-- [ ] Easter eggs (specifics TBD)
+- [x] Easter eggs — dolphin 🐬 (Rhode Island, appears after 10s), snake 🐍 (Arizona, slithers across on load/switch)
 - [ ] Continue building out "random writing" over time
 - [ ] Refine "start here" to feel like a real introduction
 - [ ] Write first real essay for "random writing"
